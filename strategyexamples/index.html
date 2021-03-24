@@ -1,0 +1,733 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>Strategy Examples - DemaTrading.ai</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#developing-a-strategy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DemaTrading.ai" class="md-header__button md-logo" aria-label="DemaTrading.ai" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DemaTrading.ai
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Strategy Examples
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/dema-trading-ai/engine/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DemaTrading.ai" class="md-nav__button md-logo" aria-label="DemaTrading.ai" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    DemaTrading.ai
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/dema-trading-ai/engine/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../makingmoney/" class="md-nav__link">
+        Making Money
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Strategy Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Strategy Examples
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-strategy" class="md-nav__link">
+    Sample strategy
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-indicators" class="md-nav__link">
+    Generate indicators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buy-signal" class="md-nav__link">
+    Buy signal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sell-signal" class="md-nav__link">
+    Sell signal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-candles" class="md-nav__link">
+    Minimum candles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roi" class="md-nav__link">
+    ROI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-loss" class="md-nav__link">
+    Stop loss
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-indicators" class="md-nav__link">
+    Finding indicators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-indicators" class="md-nav__link">
+    Configuring indicators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-indicators-in-sellbuy-signal" class="md-nav__link">
+    Using indicators in sell/buy signal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-stoploss-return-on-investment" class="md-nav__link">
+    Configuring Stoploss / Return On Investment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-information" class="md-nav__link">
+    Extra information
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../definitionsfaq/" class="md-nav__link">
+        Definitions/FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-strategy" class="md-nav__link">
+    Sample strategy
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-indicators" class="md-nav__link">
+    Generate indicators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buy-signal" class="md-nav__link">
+    Buy signal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sell-signal" class="md-nav__link">
+    Sell signal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-candles" class="md-nav__link">
+    Minimum candles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roi" class="md-nav__link">
+    ROI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-loss" class="md-nav__link">
+    Stop loss
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-indicators" class="md-nav__link">
+    Finding indicators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-indicators" class="md-nav__link">
+    Configuring indicators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-indicators-in-sellbuy-signal" class="md-nav__link">
+    Using indicators in sell/buy signal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-stoploss-return-on-investment" class="md-nav__link">
+    Configuring Stoploss / Return On Investment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-information" class="md-nav__link">
+    Extra information
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/dema-trading-ai/engine/edit/master/docs/strategyexamples.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="developing-a-strategy">Developing a strategy<a class="headerlink" href="#developing-a-strategy" title="Permanent link">#</a></h1>
+<p>On this page you will learn how to get started with developing your very own strategy. To give you a headstart, we included a sample strategy which can be found in <code>/strategies/my_strategy.py</code>. </p>
+<h2 id="sample-strategy">Sample strategy<a class="headerlink" href="#sample-strategy" title="Permanent link">#</a></h2>
+<p>How does our sample strategy work? We will guide you through the process. The sample can be found in <code>/strategies/my_strategy.py</code>. </p>
+<h3 id="generate-indicators">Generate indicators<a class="headerlink" href="#generate-indicators" title="Permanent link">#</a></h3>
+<p>To be able to base our buy / sell signal on indicators, we need to generate these strategies. </p>
+<p>For this strategy we decided we want to use RSI and EMA indicators to trigger buys/sells. We can make the calculated value available to the buy/sell methods by adding it to the dataframe. Like this for example: 
+<code>dataframe['rsi'] = ta.RSI(dataframe)</code></p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Setting this to another value than the maximum span of candles used will result in distorted results or errors.</p>
+</div>
+<h3 id="buy-signal">Buy signal<a class="headerlink" href="#buy-signal" title="Permanent link">#</a></h3>
+<p>In our buy signal, we set some conditions for our signal. In our implementation, the pair wil only be bought when all of the following conditions are true.
+<div class="highlight"><pre><span></span><code><span class="n">current_candle</span><span class="p">[</span><span class="s1">&#39;rsi&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">30</span>
+<span class="n">current_candle</span><span class="p">[</span><span class="s1">&#39;ema5&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">current_candle</span><span class="p">[</span><span class="s1">&#39;ema21&#39;</span><span class="p">]</span>
+<span class="n">current_candle</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</code></pre></div></p>
+<h3 id="sell-signal">Sell signal<a class="headerlink" href="#sell-signal" title="Permanent link">#</a></h3>
+<p>In our sell signal, we set some conditions for our signal. In our implementation, the pair wil only be sold when all of the following conditions are true. Beside the sell signal, positions can be closed using the <a href="#stop-loss">Stop Loss</a> or <a href="#ROI">Return on Investment</a> configurations in the <code>config.json</code> file.
+<div class="highlight"><pre><span></span><code><span class="n">current_candle</span><span class="p">[</span><span class="s1">&#39;rsi&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">70</span>
+<span class="n">current_candle</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</code></pre></div></p>
+<h3 id="minimum-candles">Minimum candles<a class="headerlink" href="#minimum-candles" title="Permanent link">#</a></h3>
+<p>On the top of <code>my_strategy.py</code>, <code>min_candles</code> is defined. This is used as an offset for the amount of candles needed to calculate the biggest indicator. In our case, SMA(21) needs atleast 21 candles to work properly. Therefore, we set <code>min_candles</code> to 21. </p>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h3>
+<p>In the <code>config.json</code> file you will find all necessary and important configuration options. </p>
+<h4 id="roi">ROI<a class="headerlink" href="#roi" title="Permanent link">#</a></h4>
+<p>The ROI table in the configuration is used to sell at a certain percentage of profit after a defined time. The <code>keys</code> in the dictionary are in minutes, the <code>values</code> are the percentages. Keys should always be an <code>int</code> with double quotes. Value could be an <code>int</code> or a <code>float</code>.
+<div class="highlight"><pre><span></span><code>  <span class="nt">&quot;roi&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;0&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;60&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="nt">&quot;120&quot;</span><span class="p">:</span> <span class="mf">3.5</span>
+  <span class="p">}</span>
+</code></pre></div>
+This configuration means positions will always be closed if the profit is higher than 5%. After an hour (60 minutes) the position will automatically be closed if the profit is higher than 4%.</p>
+<h4 id="stop-loss">Stop loss<a class="headerlink" href="#stop-loss" title="Permanent link">#</a></h4>
+<p>The stoploss (SL) function is to prevent extreme loses. The SL value in the configuration file could be a <code>float</code> or an <code>int</code>.
+<div class="highlight"><pre><span></span><code>  <span class="nt">&quot;stoploss&quot;</span><span class="p">:</span> <span class="s2">&quot;-0.5&quot;</span><span class="p">,</span>
+</code></pre></div>
+This configuration means positions will always be closed if the profit is lower than -0.5%.</p>
+<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">#</a></h2>
+<p>Now you've seen how we configured all the basic settings and buy/sell signals. From now on, you can start working on <strong>your very own trading algorithms</strong>. This guide will use a very simple method of finding the right indicators and using them in your strategy. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Creating your own strategy might take some time. Don't give up too fast! <a href="#extra-information">On the bottom of the page</a> we listed some reading and learning material to become more familiar with trading, coding and everything else.</p>
+</div>
+<h3 id="finding-indicators">Finding indicators<a class="headerlink" href="#finding-indicators" title="Permanent link">#</a></h3>
+<ol>
+<li>Go to <a href="https://www.tradingview.com/chart/">TradingView</a></li>
+<li>Select a view of any coin pair you're interested it (make sure to select 'cryptos').</li>
+<li>Have a look at the graph and decide at what moments you'd like to buy / sell.</li>
+<li>Add some indicators to the graph.</li>
+<li>See whether the indicators could indicate your buy/sell positions.</li>
+<li>If you found some sort of pattern, go to the next step.</li>
+</ol>
+<h3 id="configuring-indicators">Configuring indicators<a class="headerlink" href="#configuring-indicators" title="Permanent link">#</a></h3>
+<p>You can have a look at the <code>generate_indicators()</code> method in the <code>my_strategy.py</code> file how to configure indicators for your strategy. </p>
+<h3 id="using-indicators-in-sellbuy-signal">Using indicators in sell/buy signal<a class="headerlink" href="#using-indicators-in-sellbuy-signal" title="Permanent link">#</a></h3>
+<p>Have a look at the <a href="#sell-signal">sell signal</a> or <a href="#buy-signal">buy signal</a> part of the sample strategy. Other python logic and external packages could be applied to the buy/sell signal, as long as it's a condition. </p>
+<p>This means, we can also use the following:
+<div class="highlight"><pre><span></span><code><span class="n">current_candle</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="p">(</span>
+            <span class="p">((</span><span class="n">current_candle</span><span class="p">[</span><span class="s1">&#39;rsi&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">current_candle</span><span class="p">[</span><span class="s1">&#39;rsi&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">))</span> <span class="o">&amp;</span>
+            <span class="p">(</span><span class="n">current_candle</span><span class="p">[</span><span class="s1">&#39;ema5&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">current_candle</span><span class="p">[</span><span class="s1">&#39;ema21&#39;</span><span class="p">])</span> <span class="o">&amp;</span>
+            <span class="p">(</span><span class="n">current_candle</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;buy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div>
+In this case, a position opens when RSI is either below 30 <strong>or</strong> above 40. </p>
+<h3 id="configuring-stoploss-return-on-investment">Configuring Stoploss / Return On Investment<a class="headerlink" href="#configuring-stoploss-return-on-investment" title="Permanent link">#</a></h3>
+<p>Stoploss and ROI are really important when creating an algorithm. These will make sure you get the best from your strategy, while not putting everything is at risk.</p>
+<h2 id="extra-information">Extra information<a class="headerlink" href="#extra-information" title="Permanent link">#</a></h2>
+<p>If you have trouble understanding our engine, the following resources could be useful for increasing your python, trading, whatever- skills.
+- <a href="http://mrjbq7.github.io/ta-lib/funcs.html">TA-lib functions</a> - <em>all supported indicators by ta-lib</em></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../quickstart/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Quickstart
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../definitionsfaq/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Definitions/FAQ
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+    
+  </body>
+</html>
